@@ -33,7 +33,7 @@ terraform-poc/
 Before using this Terraform configuration, ensure you have:
 
 - [Terraform](https://www.terraform.io/downloads.html) (v1.0 or later recommended)
-- Cloud provider CLI configured (AWS CLI, Azure CLI, Google Cloud SDK, etc.)
+- Cloud provider CLI configured (AWS CLI)
 - Appropriate credentials and permissions for your cloud provider
 - Git for version control
 
@@ -49,7 +49,7 @@ cd terraform-poc
 ### 2. Initialize Terraform
 
 ```bash
-tf init
+terraform init
 ```
 
 This command initializes the Terraform working directory and downloads necessary providers.
@@ -57,7 +57,7 @@ This command initializes the Terraform working directory and downloads necessary
 ### 3. Review the Configuration
 
 ```bash
-tf plan
+terraform plan
 ```
 
 This displays what resources will be created, modified, or destroyed.
@@ -65,7 +65,7 @@ This displays what resources will be created, modified, or destroyed.
 ### 4. Apply the Configuration
 
 ```bash
-tf apply
+terraform apply
 ```
 
 Confirm the changes to provision your infrastructure.
@@ -73,7 +73,7 @@ Confirm the changes to provision your infrastructure.
 ### 5. Destroy Resources (when done)
 
 ```bash
-tf destroy
+terraform destroy
 ```
 
 This removes all resources created by Terraform.
@@ -114,14 +114,14 @@ module "example" {
 
 | Command | Description |
 |---------|-------------|
-| `tf init` | Initialize Terraform working directory |
-| `tf plan` | Preview infrastructure changes |
-| `tf apply` | Apply infrastructure changes |
-| `tf destroy` | Destroy managed resources |
-| `tf validate` | Validate configuration syntax |
-| `tf fmt` | Format Terraform files |
-| `tf state list` | List resources in state |
-| `tf show` | Show current state or plan |
+| `terraform init` | Initialize Terraform working directory |
+| `terraform plan` | Preview infrastructure changes |
+| `terraform apply` | Apply infrastructure changes |
+| `terraform destroy` | Destroy managed resources |
+| `terraform validate` | Validate configuration syntax |
+| `terraform fmt` | Format Terraform files |
+| `terraform state list` | List resources in state |
+| `terraform show` | Show current state or plan |
 
 ## Best Practices
 
@@ -154,9 +154,9 @@ module "example" {
 ### State File Issues
 If you encounter state conflicts:
 ```bash
-tf state list     # View current state
-tf refresh        # Sync local state
-tf state show     # Show specific resource details
+terraform state list     # View current state
+terraform refresh        # Sync local state
+terraform state show     # Show specific resource details
 ```
 
 ### Provider Authentication
@@ -164,12 +164,6 @@ Ensure your cloud provider credentials are properly configured:
 ```bash
 # AWS
 aws configure
-
-# Azure
-az login
-
-# Google Cloud
-gcloud auth login
 ```
 
 ## Contributing
