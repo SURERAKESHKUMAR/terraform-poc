@@ -1,11 +1,11 @@
-# 🚀 Package Release Guide (Step-by-Step)
+#  Package Release Guide (Step-by-Step)
 
 This repository publishes packages to **GitHub Packages** using **GitHub Actions**.
 
 We support two types of packages:
 
-- 🔷 **Angular (NPM) → GitHub Packages**
-- 🔷 **.NET (NuGet) → GitHub Packages**
+-  **Angular (NPM) → GitHub Packages**
+-  **.NET (NuGet) → GitHub Packages**
 
 Packages are published **ONLY when a version tag is created**.
 
@@ -13,18 +13,18 @@ Normal commits to `main` will NOT publish anything.
 
 ---
 
-# 📌 PREREQUISITES (Required Before Releasing)
+#  PREREQUISITES (Required Before Releasing)
 
 All developers must have:
 
-## 1️⃣ Git Installed
+## 1️. Git Installed
 Check:
 
 ```bash
 git --version
 ```
 
-## 2️⃣ Node.js Installed (For Angular Projects)
+## 2️. Node.js Installed (For Angular Projects)
 
 Check:
 
@@ -35,7 +35,7 @@ npm --version
 
 Recommended: Node 20+
 
-## 3️⃣ .NET SDK Installed (For NuGet Projects)
+## 3️. .NET SDK Installed (For NuGet Projects)
 
 Check:
 
@@ -45,7 +45,7 @@ dotnet --version
 
 Recommended: .NET 8 SDK
 
-## 4️⃣ Access to the Repository
+## 4️. Access to the Repository
 
 You must have permission to:
 - Push to `main`
@@ -55,13 +55,13 @@ You must have permission to:
 
 ---
 
-# 🔷 SECTION 1: Angular (NPM) → GitHub Packages
+#  SECTION 1: Angular (NPM) → GitHub Packages
 
 This section explains how Angular libraries are published.
 
 ---
 
-## 📦 What Happens When You Release?
+##  What Happens When You Release?
 
 When you create a tag like:
 
@@ -79,7 +79,7 @@ GitHub Actions will:
 
 ---
 
-## 🏗 Folder Structure Requirement
+##  Folder Structure Requirement
 
 The built package must exist here:
 
@@ -95,12 +95,12 @@ Inside that folder, `package.json` must contain:
 }
 ```
 
-⚠ Important:
+ Important:
 The scope `@surerakeshkumar` must match the GitHub username exactly (lowercase).
 
 ---
 
-## 🚀 How to Release Angular Package (Step-by-Step)
+##  How to Release Angular Package (Step-by-Step)
 
 ### Step 1 — Make your code changes
 
@@ -122,7 +122,7 @@ git merge feature/update-button
 git push origin main
 ```
 
-⚠ At this point, NOTHING is published yet.
+ At this point, NOTHING is published yet.
 
 ---
 
@@ -156,7 +156,7 @@ Version: 1.0.0
 
 ---
 
-## 📥 How Another Project Installs This NPM Package
+##  How Another Project Installs This NPM Package
 
 Create `.npmrc` in consuming project:
 
@@ -174,13 +174,13 @@ npm install @surerakeshkumar/common-utilities
 
 ---
 
-# 🔷 SECTION 2: .NET (NuGet) → GitHub Packages
+#  SECTION 2: .NET (NuGet) → GitHub Packages
 
 This section explains how .NET libraries are published.
 
 ---
 
-## 📦 What Happens When You Release?
+##  What Happens When You Release?
 
 When you create a tag like:
 
@@ -201,7 +201,7 @@ Executable projects (.exe) are skipped automatically.
 
 ---
 
-## 🏗 Project Requirements
+##  Project Requirements
 
 Each library project must be:
 
@@ -211,7 +211,7 @@ Each library project must be:
 
 ---
 
-## 🚀 How to Release NuGet Packages (Step-by-Step)
+##  How to Release NuGet Packages (Step-by-Step)
 
 ### Step 1 — Make changes
 
@@ -233,7 +233,7 @@ git merge feature/add-service
 git push origin main
 ```
 
-⚠ Still nothing is published.
+ Still nothing is published.
 
 ---
 
@@ -264,7 +264,7 @@ MyLibrary.Data     2.0.0
 
 ---
 
-## 📥 How to Install NuGet Package in Another Project
+##  How to Install NuGet Package in Another Project
 
 Add GitHub Package source:
 
@@ -286,7 +286,7 @@ dotnet add package MyLibrary.Core --version 2.0.0
 
 ---
 
-# 🔖 VERSIONING RULES (Very Important)
+#  VERSIONING RULES (Very Important)
 
 Tag format must be:
 
@@ -311,20 +311,8 @@ Tag: v2.1.0
 Published Version: 2.1.0
 ```
 
----
 
-# ❗ IMPORTANT RULES
-
-| Action | Result |
-|--------|--------|
-| Push to main | ❌ No publish |
-| Push tag v1.0.0 | ✅ Publish |
-| Push same tag twice | ❌ Fails |
-| Delete tag and recreate | ⚠ Not recommended |
-
----
-
-# 🏆 Recommended Development Flow
+#  Recommended Development Flow
 
 ```
 Feature Branch → Merge to Main → Create Tag → Publish
@@ -346,7 +334,7 @@ git push origin v1.3.0
 
 ---
 
-# 🔐 Authentication Notes
+#  Authentication Notes
 
 Publishing inside GitHub Actions uses:
 
@@ -360,17 +348,17 @@ However, installing packages in another project requires a Personal Access Token
 
 ---
 
-# 🎯 Why We Use Tag-Based Release
+#  Why We Use Tag-Based Release
 
-✔ Prevents accidental publishing  
-✔ Clean version control  
-✔ Professional release process  
-✔ Industry best practice  
-✔ Works for both NPM and NuGet  
+ - Prevents accidental publishing  
+ - Clean version control  
+ - Professional release process  
+ - Industry best practice  
+ - Works for both NPM and NuGet  
 
 ---
 
-# 🏁 Final Summary
+#  Final Summary
 
 To release ANY package:
 
@@ -386,4 +374,4 @@ git tag v3.0.0
 git push origin v3.0.0
 ```
 
-Release complete ✅
+Release complete.
